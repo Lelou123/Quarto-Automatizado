@@ -1,0 +1,40 @@
+
+
+//
+//C++
+// Link Projeto: https://www.tinkercad.com/things/4e9WHT3RV5b-copy-of-projeto-placa-solar/editel?sharecode=ZwkMurKqNLq315_uzzUSFr55wZdPRcZLB0jc692MAtw
+
+int LDR = 0;
+int tensao = 0;
+void setup()
+{
+  pinMode(5, OUTPUT);
+  pinMode(6, OUTPUT);
+  pinMode(A0, INPUT);
+  pinMode(A1, INPUT);
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  digitalWrite(6, LOW);
+  digitalWrite(5, LOW);
+  
+  LDR = analogRead(A0);
+  tensao = analogRead(A1);
+  if (LDR <= 100){
+  	digitalWrite(6, HIGH);
+  }
+  if (tensao > 818 || LDR <=100 ){
+    digitalWrite(5, HIGH);
+  }
+  
+  
+  LDR = analogRead(A0);
+  
+  Serial.println(LDR);
+  tensao = analogRead(A1);
+  
+  Serial.println(tensao);
+  delay(1000); 
+}

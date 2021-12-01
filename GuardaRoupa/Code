@@ -1,0 +1,132 @@
+
+//
+//C++
+// Link Projeto: https://www.tinkercad.com/things/egU9wbwfmCA
+
+
+nt sensorTouch = 7; //Sensor
+int sensorDireita = 13;
+int sensorEsquerda = 11;
+int L1 = 4; //ledVERDE
+int L2 = 2; //ledVERMELHO
+int L3 = 3; //ledAZUL
+int MO = 8; //Motor OPEN
+int MC = 12; //Motor CLOSE
+float distanciaEsquerda;
+float distanciaDireita;
+
+void leituraEsquerda();
+void leituraDireita();
+
+void setup()
+{
+  Serial.begin(9600);
+  pinMode(sensorTouch,OUTPUT); 
+  pinMode(sensorDireita,OUTPUT);
+  pinMode(sensorEsquerda,OUTPUT);
+  pinMode(L1,OUTPUT);
+  pinMode(L2,OUTPUT);
+  pinMode(L3,OUTPUT);
+  pinMode(MO,OUTPUT);
+  pinMode(MC,OUTPUT);
+}
+
+void vermelhoFunc()
+{
+    digitalWrite(L1, LOW);  //ledVERDE desligado
+    digitalWrite(MO, LOW);  //MotorOPEN desligado
+    digitalWrite(L3, LOW);  //ledAZUL desligado
+    digitalWrite(L2, HIGH);   //ledVERMELHO ligado
+    digitalWrite(MC, HIGH);  //MotorCLOSE ligado
+	
+}
+void verdeFunc()
+{
+	digitalWrite(L2, LOW);   //ledVERMELHO desligado
+    digitalWrite(MC, LOW);  //MotorCLOSE desligado
+    digitalWrite(L3, LOW);  //ledAZUL desligado
+    digitalWrite(L1, HIGH);  //ledVERDE ligado
+    digitalWrite(MO, HIGH);  //MotorOPEN ligado
+}
+
+void parar()
+{
+    digitalWrite(L1, LOW);  //ledVERDE desligado
+    digitalWrite(MO, LOW);  //MotorOPEN desligado
+    digitalWrite(L2, LOW);   //ledVERMELHO desligado
+    digitalWrite(MC, LOW);  //MotorCLOSE desligado
+    digitalWrite(L3, HIGH);   //ledAZUL ligado
+}
+
+void loop()
+{
+  sensorTouch = digitalRead(7);
+  leituraEsquerda();
+  leituraDireita();
+  calculaDistancia();
+  delay(100);
+  
+  while(sensorTouch == HIGH)
+  { 
+    if (distanciaDireita < 40)
+    {
+      	parar();
+        system;
+    } 
+  	else if (distanciaDireita >= 40)
+    {
+        verdeFunc();
+        system;
+      
+	}
+    sensorTouch = digitalRead(7);
+    leituraEsquerda();
+    leituraDireita();
+    calculaDistancia();
+  } 
+  if (distanciaEsquerda < 40)
+  {
+     parar();
+     system;
+  } 
+  else if (distanciaEsquerda >= 40)
+  {
+      vermelhoFunc();
+      system;
+   }
+   
+}
+
+void calculaDistancia()
+{
+  distanciaDireita = distanciaDireita/2;
+  distanciaDireita = distanciaDireita * 0.034029;
+  Serial.println(distanciaDireita);
+  distanciaEsquerda = distanciaEsquerda/2;
+  distanciaEsquerda = distanciaEsquerda * 0.034029;
+  Serial.println(distanciaEsquerda);
+}
+
+void leituraEsquerda()
+{
+	pinMode(sensorEsquerda, OUTPUT);
+  	digitalWrite(sensorEsquerda, HIGH);
+  	delayMicroseconds(5);
+  	digitalWrite(sensorEsquerda, LOW);
+  	
+  
+  	pinMode(sensorEsquerda, INPUT);
+  	distanciaEsquerda=pulseIn(sensorEsquerda, HIGH);
+}
+
+void leituraDireita()
+{
+	pinMode(sensorDireita, OUTPUT);
+  	digitalWrite(sensorDireita, HIGH);
+  	delayMicroseconds(5);
+  	digitalWrite(sensorDireita, LOW);
+  	
+  
+  	pinMode(sensorDireita, INPUT);
+  	distanciaDireita=pulseIn(sensorDireita, HIGH);
+}

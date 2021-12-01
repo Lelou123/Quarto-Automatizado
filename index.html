@@ -6,71 +6,132 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projeto 2 semestre</title>
     <link rel="stylesheet" href="./style/style.css">
-    <link rel="shortcut icon" href="./imgs/favicon(1).ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./ProjetoImagens/Logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="./style/Responsive.css">
 </head>
 <body>
     <header>
         <div class="navbar">
+            <img src="./ProjetoImagens/Logo.png" alt="">
             <h1>Quarto Automatizado</h1>
-            <a href="#inicio"><h2>Inicio</h2></a>
-            <a href="#"><h2>Sobre(o projeto)</h2></a>
-            <a href="#"><h2>Participantes</h2></a>
-            <a href="#"><h2>Projetos</h2></a>    
+            <a href="index.html#inicio"><h2>Inicio</h2></a>
+            <a href="index.html#sobre"><h2>Sobre(o projeto)</h2></a>
+            <a href="index.html#participantes"><h2>Participantes</h2></a>
         </div>
     </header>
     
     <hr>
 
     <main>
-        <div class="inicio">
+        <div id="inicio">
             <div class="textos">
                 <h1>O quarto Automatizado</h1>
-                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc scelerisque augue est, vitae ultrices turpis aliquet nec. Fusce vehicula, neque sit amet elementum lacinia, lorem dui volutpat elit, nec placerat erat mauris et augue. Aliquam mauris nulla, aliquam at tincidunt at, bibendum nec quam. Ut porttitor eros ac eros ornare, non laoreet ligula blandit. Vivamus sem nibh, mattis pharetra suscipit sit amet, pulvinar ut leo. Praesent laoreet vulputate imperdiet. Phasellus ultrices efficitur justo, eu vehicula metus posuere sit amet. Fusce ut nulla congue, fringilla massa nec, luctus orci. Curabitur euismod eget sapien a lobortis. Cras feugiat nunc mi, et scelerisque lorem malesuada in. Duis ut iaculis ante.
-                Aliquam suscipit nulla in mauris feugiat rhoncus. </p>
-                <button class="btn">Download files</button>
+                <p> Nosso projeto visa melhorar a qualidade de vida das pessoas, maximizando o tempo
+                    em que elas precisam para fazer simples coisas do cotidiano, como às vezes esquecer
+                    de fechar as janelas, estar apressado para ir trabalhar e esquecer de fechar o guarda-
+                    roupas, com isso em mente pensamos em automatizar uma das partes mais
+                    importantes de uma casa, o quarto, que é o local onde passamos à maior parte do
+                    nosso tempo enquanto estamos em casa. </p>
+                <button class="btn"><a href="./Quarto-Automatizado.zip"> Baixar projeto </a></button>
             </div>
             
             <div class="arduino">   
-                <img src="./imgs/arduino.png" alt="">        
+                <img class="quarto" src="./ProjetoImagens/ExQuarto.jpg" alt="">        
             </div>
         </div>
 
         <hr>
 
-        <div class="sobre">
+        <div id="sobre">
+            <h1>Sobre</h1>
             <div class="textos">
-                <h1>Sobre</h1>
                 <h2>Objetivo do projeto: </h2>
-                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc scelerisque augue est, vitae ultrices turpis aliquet nec. Fusce vehicula, neque sit amet elementum lacinia, lorem dui volutpat elit, nec placerat erat mauris et augue. Aliquam mauris nulla, aliquam at tincidunt at, bibendum nec quam. Ut porttitor eros ac eros ornare, non laoreet ligula blandit. Vivamus sem nibh, mattis pharetra suscipit sit amet, pulvinar ut leo. Praesent laoreet vulputate imperdiet. Phasellus ultrices efficitur justo, eu vehicula metus posuere sit amet. Fusce ut nulla congue, fringilla massa nec, luctus orci. Curabitur euismod eget sapien a lobortis. Cras feugiat nunc mi, et scelerisque lorem malesuada in. Duis ut iaculis ante.
-                Aliquam suscipit nulla in mauris feugiat rhoncus. </p>
-                
-                <h2>Componentes usados: </h2>
-                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc scelerisque augue est, vitae ultrices turpis aliquet nec. Fusce vehicula, neque sit amet elementum lacinia, lorem dui volutpat elit, nec placerat erat mauris et augue.
-                    Aliquam suscipit nulla in mauris feugiat rhoncus. </p>
-                <button class="btn">Download files</button>
+                <p> Nosso projeto consistiu em automatizar alguns objetos de dentro de um quarto, como
+                    as janelas, e o guarda-roupa, as janelas caso chova, ela se fecha sozinha e quando fica
+                    muito quente ela se abre sozinha, para assim regular a temperatura ambiente, já o
+                    guarda-roupas ele funciona com um sensor de movimento quando a pessoa está perto
+                    ele abre, se isso não acontece ele se fecha, já o chuveiro criamos de uma maneira auto
+                    sustável. A execução do projeto foi divertida e satisfatória, também conseguimos
+                    adquirir muito conhecimento sobre à área de IoT, não encontramos erros no projeto
+                    final, com isso conseguimos utilizar todo conhecimento que adquirimos. </p>
             </div>
             
-            <div class="arduino">   
-                <img src="./imgs/arduino.png" alt="">
-                <img src="./imgs/arduino.png" alt="">        
-            </div>
-            
+            <div class="arduino">
+                <div class="projetos">
+                    <img src="./ProjetoImagens/Guarda roupas automatizado.jpg" alt="">
+                    <h2>Guarda-roupas Automatizado</h2>
+                    <button class="btn2"> <a href="GuardaRoupas.html">Ver Projeto </a></button>
+                </div>   
+                <div class="projetos">
+                    <img src="./ProjetoImagens/Chuveiro 3D Thumb.jpg" alt="">
+                    <h2>Chuveiro Solar</h2>
+                    <button class="btn2"> <a href="chuveiro.html">Ver Projeto </a></button>
+                </div>
+                <div class="projetos">
+                    <img src="./ProjetoImagens/Janela Automatizada.jpg" alt="">       
+                    <h2>Janela Automatizada</h2>
+                    <button class="btn2"> <a href="Janela.html"> Ver Projeto</a></button>
+                </div>    
+            </div>   
         </div>
 
         <hr>
-<!--
-        <div class="participantes">
-            <div class="murillo">
-                
-                <img src="./imgs/Murillo.jpeg" alt="">
-                <h2>Murillo</h2>
-                <p></p>
+
+        <div id="participantes">
+            <h1>Participantes</h1>
+            <div class="bloco1">
+                <div class="murillo">
+                    <h2>Murillo</h2>
+                    <p>Resposavel pelo:</p>
+                    <p>Site de apresentação</p>
+                    
+                    <img src="./imgs/Murillo.jpeg" alt="">
+                </div>
+
+                <div class="murillo">
+                    
+                    <img src="./imgs/Joana.jpeg" alt="">
+                    <h2>Joana</h2>
+                    <p>Resposavel pelo:</p>
+                    <p>Código de projeto</p>
+                </div>
+
+                <div class="murillo">
+                    <h2>Débora</h2>
+                    <p>Resposavel pelo:</p>
+                    <p>Código de projeto</p>
+                    <img src="./imgs/Debora.jpg" alt="">
+                    
+                </div>
             </div>
-        </div>--> 
+
+            <div class="bloco2">
+                <div class="murillo">
+                    <h2>FIlipe</h2>
+                    <p>Resposavel pelo:</p>
+                    <p>Design de projeto</p>
+                    <img src="./imgs/filipe.jpg" alt="">
+                </div>
+                <div class="murillo"> 
+                    <img src="./imgs/Cleison.jpg" alt="">
+                    <h2>Cleison</h2>
+                    <p>Resposavel pela:</p>
+                    <p>Documentação de projeto</p>
+                </div>
+                <div class="murillo">
+                    <h2>Luis</h2>
+                    <p>Resposavel pelo:</p>
+                    <p>Código de projeto</p>
+                    <img src="./imgs/Luis.jpg" alt=""> 
+                </div>
+            </div>   
+        </div>
     </main>
 
     <footer>
-
+        <div class="bottom-container">
+            <h2 class="copyright">© Desenvolvido em 2021 por Murillo Julio.</h2>
+          </div>
     </footer>
 </body>
 </html>
